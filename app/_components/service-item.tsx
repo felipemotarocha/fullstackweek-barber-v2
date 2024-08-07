@@ -8,6 +8,11 @@ interface ServiceItemProps {
 }
 
 const ServiceItem = ({ service }: ServiceItemProps) => {
+  const formattedPrice = Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  }).format(Number(service.price))
+
   return (
     <Card>
       <CardContent className="flex items-center gap-3 p-3">
@@ -26,12 +31,7 @@ const ServiceItem = ({ service }: ServiceItemProps) => {
           <p className="text-sm text-gray-400">{service.description}</p>
           {/* PREÇO E BOTÃO */}
           <div className="flex items-center justify-between">
-            <p className="text-sm font-bold text-primary">
-              {Intl.NumberFormat("pt-BR", {
-                style: "currency",
-                currency: "BRL",
-              }).format(Number(service.price))}
-            </p>
+            <p className="text-sm font-bold text-primary">{formattedPrice}</p>
 
             <Button variant="secondary" size="sm">
               Reservar
