@@ -2,7 +2,7 @@ import { getServerSession } from "next-auth"
 import Header from "../_components/header"
 import { authOptions } from "../_lib/auth"
 import { notFound } from "next/navigation"
-import BookingItem from "../_components/booking-item"
+import { BookingItem } from "../_components/booking-item"
 import { getConfirmedBookings } from "../_data/get-confirmed-bookings"
 import { getConcludedBookings } from "../_data/get-concluded-bookings"
 

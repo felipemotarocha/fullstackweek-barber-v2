@@ -23,3 +23,5 @@ export const authOptions: AuthOptions = {
   },
   secret: process.env.NEXT_AUTH_SECRET,
 }
+
+//secret é a variavel de ambiente para o deploy na vercel
